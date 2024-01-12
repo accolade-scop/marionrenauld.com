@@ -26,12 +26,34 @@
   justify-content: flex-start
   align-items: center
   column-gap: 30px
-
+  > *:last-of-type
+    cursor: pointer
+    display: none
+.smart
+  .menu
+    display: none
+    flex-flow: column nowrap
+    justify-content: flex-start
+    align-items: flex-start
+    row-gap: 10px
+    background-color: black
+    color: white
+    li
+      border-bottom: 1px solid rgba(255, 255, 255, .1)
+      width: 100%
+      font-size: 12px
+      > a
+        display: block
+        padding: 10px 20px
+        &:hover
+          opacity: .5
+          transition: opacity 100ms linear
 .container
   display: flex
   width: 100%
   max-width: $interface-container-width-max
   margin: auto
+  padding: 0 20px
 
   p
     font-size: 14px

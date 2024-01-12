@@ -10,7 +10,7 @@ export default function Projet() {
 
             <div className="slider"> SLIDER ici ... </div>
 
-            <h2>Titre du projet</h2>
+            <h2>Titre du descriptif</h2>
 
             <h5>Coulounieix-Chamiers (24) / Résidence Ça déménage</h5>
 
