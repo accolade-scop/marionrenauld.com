@@ -4,7 +4,7 @@ export default function Footer() {
     return (<footer>
             <section>
                 <Link target="_blank"
-                      href="http://poincare.univ-lorraine.fr/fr/membre-associe/marion-renauld">philosopie</Link>
+                      href="http://poincare.univ-lorraine.fr/fr/membre-associe/marion-renauld">philosophie</Link>
                 <Link target="_blank" href="https://www.instagram.com/marionrenauld/">
                     <span className="material-icons">photo_camera</span></Link>
                 <Link href="mailto:marion.renauld1@gmail.com">marion.renauld1@gmail.com</Link>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {actionsList, objetsList, langagesList} from '@/data';
 
 export default function Home() {
     return (
@@ -6,54 +7,15 @@ export default function Home() {
             <article className="container">
                 <nav>
                     <h1>Action</h1>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
+                    {actionsList.map((a, index)=> <Link href={'/portfolio/' + a.slug} key={index}>{a.title}</Link>)}
                 </nav>
                 <nav>
                     <h1>Langage</h1>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
+                    {langagesList.map((a, index)=> <Link href={a.slug} key={index}>{a.title}</Link>)}
                 </nav>
                 <nav>
                     <h1>Objet</h1>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
-                    <Link href="/portfolio/projet1">Intitulé du projet</Link>
+                    {objetsList.map((a, index)=> <Link href={'/portfolio/' + a.slug} key={index}>{a.title}</Link>)}
                 </nav>
 
             </article>

@@ -1,11 +1,12 @@
 import Footer from '@/app/components/global/footer';
 import Header from '@/app/components/global/header';
+import { ReactNode } from 'react';
 import './assets/globals.sass';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
       <html lang="fr">
