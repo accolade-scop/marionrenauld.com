@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export default async function Home() {
 
+    // on récupère la liste de tous les projets
     const projetsList = await ACMS.getList('projet');
     const actionsList = projetsList.filter(p => p.type === 'action')
     const langagesList = projetsList.filter(p => p.type === 'langage')
