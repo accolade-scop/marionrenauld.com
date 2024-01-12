@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
-      - run: make website_build
+      - run: npm --prefix website ci
+      - run: npm --prefix website run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
