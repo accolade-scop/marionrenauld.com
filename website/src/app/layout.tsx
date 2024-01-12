@@ -1,5 +1,5 @@
-import Footer from '@/app/components/global/footer';
-import Header from '@/app/components/global/header';
+import Footer from '@/components/global/footer';
+import Header from '@/components/global/header';
 import { ReactNode } from 'react';
 import './assets/globals.sass';
 

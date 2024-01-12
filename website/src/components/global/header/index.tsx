@@ -16,7 +16,7 @@ export default function Header() {
             </Link>
 
             <ul className="menu">
-                <li><Link href="/">Sommaire</Link></li>
+                <li><Link href="/website/public">Sommaire</Link></li>
                 <li><Link href="/portfolio/action/">Action</Link></li>
                 <li><Link href="/portfolio/langage/">Langage</Link></li>
                 <li><Link href="/portfolio/objet/">Objet</Link></li>
@@ -29,7 +29,7 @@ export default function Header() {
 
     <nav className="smart">
         <ul className="menu">
-            <li><Link href="/">Sommaire</Link></li>
+            <li><Link href="/website/public">Sommaire</Link></li>
             <li><Link href="/portfolio/action/">Action</Link></li>
             <li><Link href="/portfolio/langage/">Langage</Link></li>
             <li><Link href="/portfolio/objet/">Objet</Link></li>
