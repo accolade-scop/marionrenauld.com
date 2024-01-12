@@ -1,0 +1,141 @@
+.material-icons
+  font-family: 'Material Icons', sans-serif
+  font-weight: normal
+  font-style: normal
+  font-size: inherit
+  display: inline-block
+  line-height: 1
+  text-transform: none
+  letter-spacing: normal
+  word-wrap: normal
+  white-space: nowrap
+  direction: ltr
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale
+  /* Support for IE. */
+  font-feature-settings: 'liga'
+  filter: invert(1)
+
+.menu
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: center
+  column-gap: 30px
+
+.container
+  display: flex
+  width: 100%
+  max-width: $interface-container-width-max
+  margin: auto
+
+  p
+    font-size: 14px
+    line-height: 30px
+
+  p:last-of-type
+    padding-bottom: 60px
+
+
+.sommaire
+  > .container
+    flex-flow: row wrap
+    justify-content: space-between
+    align-items: flex-start
+    column-gap: 30px
+
+    > nav
+      flex: 1 1 auto
+
+      a
+        display: block
+        line-height: 30px
+        transition: opacity 100ms linear
+
+        &:hover
+          opacity: 0.5
+
+      > h1
+        font-size: 45px
+        margin-bottom: $inter-space-large
+
+      &:first-child
+        *
+          text-align: left
+
+      &:last-child
+        *
+          text-align: right
+
+      *
+        text-align: center
+
+
+.theme
+  > .container
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: center
+    row-gap: 30px
+
+  h1
+    font-weight: normal
+    color: black
+    font-size: 125px
+
+  p
+    text-align: center
+
+  .material-icons
+    font-size: 42px
+    &:hover
+      filter: invert(0)
+      transition: filter 200ms linear
+
+
+.projet
+  > .container
+    flex-flow: column nowrap
+    justify-content: space-between
+    align-items: flex-start
+
+    h1
+      color: black
+      font-size: 50px
+      line-height: 60px
+      text-align: left
+      font-weight: 300
+      margin-bottom: 22px
+
+    h2
+      color: black
+      font-size: 22px
+      text-align: left
+      font-weight: 300
+
+    h5
+      line-height: 1.3
+      margin-bottom: $inter-space-large
+    .slider
+      margin-bottom: $inter-space-large
+      background-color: #aaaaaa
+      width: 100%
+
+.download, .pager
+      align-self: center
+.pager
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  align-items: center
+  column-gap: 100px
+  margin: 20px auto
+.material-icons
+  font-size: 42px
+  &:hover
+    filter: invert(0)
+    transition: filter 200ms linear
