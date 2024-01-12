@@ -1,0 +1,32 @@
+//  RESPOND ABOVE : @include respond-sup(sm)
+@mixin respond-sup($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    $breakpoint-value: map-get($breakpoints, $breakpoint)
+    @media (min-width: $breakpoint-value)
+      @content
+  @else
+    @warn 'Invalid breakpoint: #$breakpoint.'
+
+
+//  RESPOND BELOW :  @include respond-inf(sm)
+@mixin respond-inf($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    $breakpoint-value: map-get($breakpoints, $breakpoint)
+    @media (max-width: ($breakpoint-value - 1))
+      @content
+  @else
+    @warn 'Invalid breakpoint: #$breakpoint.'
+
+
+//  RESPOND BETWEEN : @include respond-entre(sm, md)
+@mixin respond-entre($lower, $upper)
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper)
+    $lower-breakpoint: map-get($breakpoints, $lower)
+    $upper-breakpoint: map-get($breakpoints, $upper)
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1))
+      @content
+  @else
+    @if (map-has-key($breakpoints, $lower) == false)
+      @warn 'Your lower breakpoint was invalid: #$lower.'
+  @if (map-has-key($breakpoints, $upper) == false)
+    @warn 'Your upper breakpoint was invalid: #$upper.'

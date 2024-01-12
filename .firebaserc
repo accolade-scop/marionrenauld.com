@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "marion-renauld"
+  },
+  "targets": {
+    "marion-renauld": {
+      "hosting": {
+        "admin": [
+          "admin-marion"
+        ],
+        "website": [
+          "marion-renauld"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

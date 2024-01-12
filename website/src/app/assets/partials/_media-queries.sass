@@ -1,0 +1,41 @@
+// md: 992px
++respond-inf(md)
+  header
+    section
+      align-items: center
+      .-o-logo__heading
+        &::after
+          display: none
+      .menu
+        *:last-of-type
+          display: flex
+          padding-left: 20px
+        *:not(:last-of-type)
+          display: none
+  .smart
+    .menu
+      display: flex
+
+// md: 576px
++respond-inf(xs)
+
+  .sommaire
+    > .container
+      row-gap: 30px
+      > nav
+        width: 100%
+        > *
+          text-align: left !important
+
+  .theme
+    h1
+      font-size: 50px
+
+  footer
+    section
+      flex-flow: column nowrap
+      row-gap: 10px
+      &:last-child
+        > span
+          &:not(:last-child)::after
+            display: none

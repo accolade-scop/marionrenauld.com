@@ -1,0 +1,79 @@
+// ****************** GENERICS ***************
+html
+  font-size: 100%
+body
+  position: relative
+  font-family: Raleway, Helvetica, Arial, sans-serif
+  font-size: 100% //$gag-base-fontsize
+  font-weight: 300
+  line-height: 1.42857143
+  -webkit-font-smoothing: antialiased
+  background-color: white
+  color: #555
+  margin: 0
+  padding: 0
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+  align-items: stretch
+  height: 100vh
+a
+  cursor: pointer
+strong
+  font-weight: 700
+header
+  padding: 20px 0
+  border-bottom: 1px solid rgba(0,0,0, 0.4)
+  > section
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: flex-end
+    width: 100%
+    margin: auto
+    max-width: $interface-container-width-max
+    padding: 0 20px
+
+main
+  flex: 1 1 auto
+  padding: 40px 0
+  overflow: hidden
+  overflow-y: auto
+
+footer
+  section
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    align-items: center
+    padding: 20px 0
+    font-size: 12px
+    .material-icons
+      font-size: 22px
+      &:hover
+        filter: invert(0)
+        transition: filter 200ms linear
+    > *
+      max-width: $interface-container-width-max
+      white-space: nowrap
+      flex: 0 0 0
+    &:first-child
+      flex: 1 1 auto
+      text-align: center
+      column-gap: 80px
+      background-color: #f7f7f7
+    &:last-child
+      background-color: black
+      > span
+        color: #333
+        font-weight: 600
+        > a
+          color: white
+          font-weight: normal
+          &:hover
+            opacity: .3
+            transition: opacity 100ms linear
+        &:not(:last-child)::after
+          content: "|"
+          padding: 0 5px
+          color: inherit
