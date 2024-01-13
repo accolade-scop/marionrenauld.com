@@ -1,6 +1,5 @@
 
 import { config } from './config';
-import { ComponentType } from 'react';
 
 type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
 type DualXOR<T, U> = (T | U) extends object ? (Without<T, U> & U) | (Without<U, T> & T) : T | U;
@@ -37,10 +36,10 @@ export interface ICollection {
     defaultSort?: any;
     // composant custom pour certaines actions
     custom?: {
-        edit?: ComponentType,
-        show?: ComponentType,
-        list?: ComponentType,
-        create?: ComponentType,
+        edit?: any,
+        show?: any,
+        list?: any,
+        create?: any,
     },
     fields: Readonly<Record<string, Field>>;
 }
