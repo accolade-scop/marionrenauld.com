@@ -13,7 +13,7 @@ export default function Header() {
         <section>
 
             <Link href="/" className="-o-logo__heading">
-                <Image src="/img/logo-marion.png" alt="contacter le GAG" title="Contacter le GAG"/>
+                <Image src="/img/logo-marion.png" alt="Logo"/>
             </Link>
 
             <ul className="menu">
