@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
 
@@ -12,7 +13,7 @@ export default function Header() {
         <section>
 
             <Link href="/" className="-o-logo__heading">
-                <img src="/img/logo-marion.png" alt="contacter le GAG" title="Contacter le GAG"/>
+                <Image src="/img/logo-marion.png" alt="contacter le GAG" title="Contacter le GAG"/>
             </Link>
 
             <ul className="menu">
