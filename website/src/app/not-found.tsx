@@ -11,7 +11,7 @@ export default function NotFound() {
 
                     <p>Impossible de trouver la page demandée !</p>
 
-                    <Link href="/" className="">Revenir au sommaire</Link>
+                    <Link href="/" className=""> --- Revenir au sommaire --- </Link>
                 </section>
 
             </article>

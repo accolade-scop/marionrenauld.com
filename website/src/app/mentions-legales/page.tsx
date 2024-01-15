@@ -56,7 +56,7 @@ export default function MentionsLegales() {
                     relative à l’informatique, aux fichiers et aux libertés, vous disposez d’un droit d’accès, de
                     rectification, de modification et de suppression concernant les données qui vous concernent.</p>
 
-                <Link href="/" className="">Revenir au sommaire</Link>
+                <Link href="/" className=""> --- Revenir au sommaire --- </Link>
 
             </section>
 
