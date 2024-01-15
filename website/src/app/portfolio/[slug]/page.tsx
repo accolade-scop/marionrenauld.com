@@ -25,16 +25,16 @@ export default async function DetailProjet({params}: any) {
 
             {projet.fichier?.src
                 ? <Link className="download" href={projet.fichier.src} target="_blank">
-                    <span className="material-icons">file_download</span>
+                    <img src="/img/download.svg" className="picto" alt="Télécharger"/>
                 </Link>
                 : ''}
 
             <nav className="pager">
                 <Link href="/">
-                    <span className="material-icons">arrow_circle_left</span>
+                    <img src="/img/left.svg" className="picto" alt="Précédent"/>
                 </Link>
                 <Link href="/">
-                    <span className="material-icons">arrow_circle_right</span>
+                    <img src="/img/right.svg" className="picto" alt="Suivant"/>
                 </Link>
             </nav>
 

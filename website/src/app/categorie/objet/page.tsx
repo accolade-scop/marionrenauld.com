@@ -16,7 +16,7 @@ export default function Theme() {
             <p>4D : toujours en plus du temps, ça va de soi tout en ne sachant pas vraiment comment ça développe.</p>
 
             <Link href="/portfolio/projet1">
-            <span className="material-icons">expand_circle_down</span>
+                <img src="/img/read.svg" className="picto" alt="Lire"/>
             </Link>
 
         </article>

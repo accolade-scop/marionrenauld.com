@@ -9,24 +9,22 @@
       .menu
         *:last-of-type
           display: flex
-          padding-left: 20px
         *:not(:last-of-type)
           display: none
-  .smart
-    .menu
-      display: flex
+
+  main
+    overflow: visible
+    &.sommaire
+      > .container
+        flex-flow: column nowrap
+        row-gap: 30px
+        > nav
+          width: 100%
+          > *
+            text-align: center !important
 
 // md: 576px
 +respond-inf(xs)
-
-  .sommaire
-    > .container
-      row-gap: 30px
-      > nav
-        width: 100%
-        > *
-          text-align: left !important
-
   .theme
     h1
       font-size: 50px
@@ -34,7 +32,7 @@
   footer
     section
       flex-flow: column nowrap
-      row-gap: 10px
+      row-gap: 0
       &:last-child
         > span
           &:not(:last-child)::after

@@ -18,7 +18,7 @@ export default function Action() {
             <p>Pour tous : décrire ce qui est, chercher ce qui se devine, inventer le reste.</p>
 
             <Link href="/portfolio/projet1">
-            <span className="material-icons">expand_circle_down</span>
+                <img src="/img/read.svg" className="picto" alt="Lire"/>
             </Link>
 
         </article>

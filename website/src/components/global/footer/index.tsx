@@ -6,7 +6,7 @@ export default function Footer() {
                 <Link target="_blank"
                       href="http://poincare.univ-lorraine.fr/fr/membre-associe/marion-renauld">philosophie</Link>
                 <Link target="_blank" href="https://www.instagram.com/marionrenauld/">
-                    <span className="material-icons">photo_camera</span></Link>
+                    <img src="/img/photo.svg" className="picto" alt="Lien Instagram"/></Link>
                 <Link href="mailto:marion.renauld1@gmail.com">marion.renauld1@gmail.com</Link>
             </section>
 
