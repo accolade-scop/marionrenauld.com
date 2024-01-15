@@ -20,7 +20,7 @@
   font-feature-settings: 'liga'
   filter: invert(1)
 
-header.menu
+.menu
   display: flex
   flex-flow: row wrap
   justify-content: flex-start
@@ -29,25 +29,27 @@ header.menu
   > *:last-of-type
     cursor: pointer
     display: none
-.smart
-  .menu
-    display: none
-    flex-flow: column nowrap
-    justify-content: flex-start
-    align-items: flex-start
-    row-gap: 10px
-    background-color: black
-    color: white
-    li
-      border-bottom: 1px solid rgba(255, 255, 255, .1)
-      width: 100%
-      font-size: 12px
-      > a
-        display: block
-        padding: 10px 20px
-        &:hover
-          opacity: .5
-          transition: opacity 100ms linear
+
+#menu-smart
+  display: none
+  flex-flow: column nowrap
+  justify-content: flex-start
+  align-items: flex-start
+  row-gap: 10px
+  background-color: black
+  color: white
+  &.open
+    display: flex
+  li
+    border-bottom: 1px solid rgba(255, 255, 255, .1)
+    width: 100%
+    font-size: 12px
+    > a
+      display: block
+      padding: 10px 20px
+      &:hover
+        opacity: .5
+        transition: opacity 100ms linear
 .container
   display: flex
   width: 100%
@@ -112,12 +114,6 @@ header.menu
   p
     text-align: center
 
-  .material-icons
-    font-size: 42px
-    &:hover
-      filter: invert(0)
-      transition: filter 200ms linear
-
 
 .projet
   > .container
@@ -162,7 +158,7 @@ header.menu
 .picto
   width: 40px
   height: 40px
-
+  opacity: .5
+  transition: opacity 100ms linear
   &:hover
-    filter: invert(0)
-    transition: filter 200ms linear
+    opacity: 1
