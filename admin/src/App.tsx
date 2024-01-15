@@ -328,7 +328,7 @@ const guessShowField = (key: string, field: Field) => {
     // standard
     switch (field.type) {
         case 'image':
-            return <ImageField key={key} {...params} title="title" source={key + '.src'}/>;
+            return <ImageField key={key} {...params} title="title" source={key + '.src'} />;
         case 'checkbox':
             return <BooleanField key={key} {...params}/>;
         case 'string':
@@ -413,7 +413,7 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
     // standard
     switch (field.type) {
         case 'image':
-            return <ImageInput key={key} {...params} maxSize={5000000}>
+            return <ImageInput key={key} {...params} maxSize={5000000} multiple={field.multiple || false}>
                 <ImageField source="src" title="title"/>
             </ImageInput>;
         case 'file':

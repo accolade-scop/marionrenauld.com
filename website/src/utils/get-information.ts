@@ -46,7 +46,16 @@ function cleanDoc(fields: any) {
                 rtr[fieldElement] = [];
             } else {
                 rtr[fieldElement] = value.values.map((v: any) => {
-                    return v[Object.keys(v)[0]];
+                    let data = v[Object.keys(v)[0]];
+                    if(data.fields) {
+                        const fields = data.fields;
+                        data = {};
+                        Object.keys(fields).forEach(k => {
+                            data[k] = fields[k][Object.keys(fields[k])[0]]
+                        });
+
+                    }
+                    return data;
                 });
             }
         } else if (

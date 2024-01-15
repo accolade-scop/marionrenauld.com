@@ -1,4 +1,3 @@
-
 import { config } from './config';
 
 type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
@@ -10,15 +9,16 @@ type XOR<T extends any[]> =
 
 export type SimpleField = {
     label: string;
-    type?: 'string' | 'number' | 'text' | 'date' | 'checkbox' | 'image' | 'file';
+    type?: 'string' | 'number' | 'text' | 'date' | 'checkbox' | 'file';
     condition?: (record: any) => boolean
 };
 
 export type ReferenceField = { label?: string, reference: string, multiple?: boolean };
 export type GroupField = { label: string, nested: Record<string, Field> }
 export type SelectField = { label: string; type: 'select', list: ReadonlyArray<string> }
-export type JsonField = {label: string, type: 'json' }
-export type Field = XOR<[SimpleField, ReferenceField, SelectField, GroupField, JsonField]>
+export type JsonField = { label: string, type: 'json' }
+export type ImageField = { label: string, type: 'image', multiple?: boolean }
+export type Field = XOR<[SimpleField, ReferenceField, SelectField, GroupField, JsonField, ImageField]>
     & {
     hide?: ReadonlyArray<'list' | 'edit' | 'create'>,
     order?: number,
@@ -63,12 +63,12 @@ export type getFieldType<
     : AField<Coll, Field> extends { readonly reference: any } ? string
         // @ts-ignore
         : AField<Coll, Field> extends { readonly list: infer U } ? U[number]
-            : AField<Coll, Field> extends {readonly type: 'json'} ? Record<string, any>
-                : AField<Coll, Field> extends {readonly type: 'date'} ? string
-                    : AField<Coll, Field> extends {readonly type: 'number'} ? number
-                        : AField<Coll, Field> extends {readonly type: 'image'} ? { src: string, title: string }
-                            : AField<Coll, Field> extends {readonly type: 'file'} ? { src: string, title: string }
-                                : AField<Coll, Field> extends {readonly type: 'checkbox'} ? boolean
+            : AField<Coll, Field> extends { readonly type: 'json' } ? Record<string, any>
+                : AField<Coll, Field> extends { readonly type: 'date' } ? string
+                    : AField<Coll, Field> extends { readonly type: 'number' } ? number
+                        : AField<Coll, Field> extends { readonly type: 'image' } ? ( AField<Coll, Field> extends {readonly multiple: true} ? { src: string, title: string }[] : { src: string, title: string })
+                            : AField<Coll, Field> extends { readonly type: 'file' } ? { src: string, title: string }
+                                : AField<Coll, Field> extends { readonly type: 'checkbox' } ? boolean
                                     : string;
 
 export type collection = keyof typeof config['collections'];

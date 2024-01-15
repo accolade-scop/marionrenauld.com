@@ -19,6 +19,10 @@ export const config = {
                 },
                 date: {
                     label: 'Date',
+                    type: 'date'
+                },
+                period: {
+                    label: 'Période',
                 },
                 location: {
                     label: 'Lieu',
@@ -41,6 +45,7 @@ export const config = {
                 image: {
                     label: 'image',
                     type: 'image',
+                    multiple: true,
                     hide: ['list']
                 }
             }

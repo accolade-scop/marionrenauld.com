@@ -4,10 +4,10 @@ import Link from 'next/link';
 export default async function Home() {
 
     // on récupère la liste de tous les projets
-    const projetsList = await ACMS.getList('projet');
-    const actionsList = projetsList.filter(p => p.type === 'action')
-    const langagesList = projetsList.filter(p => p.type === 'langage')
-    const objetsList = projetsList.filter(p => p.type === 'objet')
+    const projectsList = (await ACMS.getList('projet')).sort((a, b) => (a.date || '') > (b.date || '') ? -1 : 1);
+    const actionsList = projectsList.filter(p => p.type === 'action')
+    const langagesList = projectsList.filter(p => p.type === 'langage')
+    const objetsList = projectsList.filter(p => p.type === 'objet')
 
     const link = (p: ACMSConfig<'projet'>) => ACMS.getLink('projet', p);
 
