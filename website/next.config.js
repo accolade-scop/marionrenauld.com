@@ -3,8 +3,8 @@ const nextConfig = {
   output: 'export',
   distDir: 'dist',
   trailingSlash: true,
+  images: { unoptimized: true },
   experimental: {
-
     scrollRestoration: false
   }
 }
