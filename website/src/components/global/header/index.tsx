@@ -13,7 +13,7 @@ export default function Header() {
         <section>
 
             <Link href="/" className="-o-logo__heading">
-                <Image src="/img/logo-marion.png" alt="Logo"/>
+                <Image src="/img/logo-marion.png" alt="Logo" width={315} height={38}/>
             </Link>
 
             <ul className="menu">
@@ -21,7 +21,7 @@ export default function Header() {
                 <li><Link href="/categorie/action/">Action</Link></li>
                 <li><Link href="/categorie/langage/">Langage</Link></li>
                 <li><Link href="/categorie/objet/">Objet</Link></li>
-                <li><span className="material-icons">expand_more</span></li>
+                <li><img src="/img/expand.svg" className="picto" alt="Ouvrir le menu"/></li>
             </ul>
 
         </section>
@@ -34,7 +34,6 @@ export default function Header() {
             <li><Link href="/portfolio/action/">Action</Link></li>
             <li><Link href="/portfolio/langage/">Langage</Link></li>
             <li><Link href="/portfolio/objet/">Objet</Link></li>
-            <li><span className="material-icons">expand_more</span></li>
         </ul>
     </nav>
 
