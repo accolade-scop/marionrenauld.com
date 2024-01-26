@@ -48,16 +48,16 @@ export interface IConfig {
     collections: Readonly<Record<string, ICollection>>;
 }
 
-export type AFieldList<Coll extends collection> = keyof typeof config['collections'][Coll]['fields']
+export type AFieldList<Coll extends Collection> = keyof typeof config['collections'][Coll]['fields']
 
 export type AField<
-    Coll extends collection,
+    Coll extends Collection,
     Field extends AFieldList<Coll>
 > = typeof config['collections'][Coll]['fields'][Field];
 
 // @ts-ignore
 export type getFieldType<
-    Coll extends collection,
+    Coll extends Collection,
     Field extends AFieldList<Coll>
 > = AField<Coll, Field> extends { readonly reference: any, multiple: true } ? string[]
     : AField<Coll, Field> extends { readonly reference: any } ? string
@@ -71,8 +71,8 @@ export type getFieldType<
                                 : AField<Coll, Field> extends { readonly type: 'checkbox' } ? boolean
                                     : string;
 
-export type collection = keyof typeof config['collections'];
-export type ACMSConfig<Coll extends collection> = {
+export type Collection = keyof typeof config['collections'];
+export type ACMSConfig<Coll extends Collection> = {
     -readonly [Field in AFieldList<Coll>]?: getFieldType<Coll, Field>;
 } & { id: string }
 

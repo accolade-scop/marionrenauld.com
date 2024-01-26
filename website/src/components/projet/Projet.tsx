@@ -1,17 +1,15 @@
-import { ACMS } from '@/utils/tool';
-import Image from 'next/image';
+import { ACMS, ACMSConfig } from '@/utils/tool';
 import Link from 'next/link';
 
-export default async function DetailProjet({params}: any) {
-    const slug = params.slug;
+type ProjectType = ACMSConfig<'action'> | ACMSConfig<'objet'>;
 
-    const projet = await ACMS.getBySlug('projet', slug);
-    if (!projet) {
-        return <>not found {slug}</>;
-    }
+export default async function Projet(params: {projet: ProjectType, type: 'action' | 'objet'}) {
+
+    const projet: ProjectType = params.projet;
+    const type = params.type;
 
     // on récupère la liste des projets ordonnés par date décroissante
-    const projectsList = (await ACMS.getList('projet')).sort((a, b) => (a.date || '') > (b.date || '') ? -1 : 1);
+    const projectsList = (await ACMS.getList(type)).sort((a, b) => (a.date || '') > (b.date || '') ? -1 : 1);
     const currentPosition = projectsList.findIndex(p => p.id === projet.id);
     const previousProject = currentPosition > 0 ? projectsList[currentPosition - 1] : null;
     const nextProject = currentPosition < projectsList.length ? projectsList[currentPosition + 1] : null;
@@ -22,9 +20,8 @@ export default async function DetailProjet({params}: any) {
 
             <h1>{projet.name}</h1>
 
-            <div className="slider">
+            <div className="slider" style={{height: '375px'}}>
                 {projet.image?.map((image, key) =>
-                    // eslint-disable-next-line @next/next/no-img-element
                     <img key={key} src={image.src} alt={image.title}/>
                 )}
             </div>
@@ -43,13 +40,13 @@ export default async function DetailProjet({params}: any) {
 
             <nav className="pager">
                 {previousProject
-                    ? <Link href={ACMS.getLink('projet', previousProject)}>
+                    ? <Link href={ACMS.getLink(type, previousProject)}>
                         <img src="/img/left.svg" className="picto" alt="Précédent"/>
                     </Link>
                     : ''
                 }
                 {nextProject
-                    ? <Link href={ACMS.getLink('projet', nextProject)}>
+                    ? <Link href={ACMS.getLink(type, nextProject)}>
                         <img src="/img/right.svg" className="picto" alt="Suivant"/>
                     </Link>
                     : ''
@@ -59,13 +56,4 @@ export default async function DetailProjet({params}: any) {
         </article>
 
     </main>;
-
-}
-
-export async function generateStaticParams() {
-    const list = await ACMS.getList('projet');
-
-    return list.map((e) => ({
-        slug: ACMS.getSlug(e),
-    }));
 }

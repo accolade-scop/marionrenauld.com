@@ -1,6 +1,13 @@
+import { ACMS } from '@/utils/tool';
 import Link from 'next/link';
 
-export default function Action() {
+export default async function LangageAccueil() {
+    const projectsList = (await ACMS.getList('langage')).sort((a, b) => (a.date || '') > (b.date || '') ? -1 : 1);
+    const firstProject = projectsList[0];
+
+    if(!firstProject) {
+        return <>not found</>
+    }
     return (<main className="theme">
 
         <article className="container">
@@ -26,7 +33,7 @@ export default function Action() {
 
             <p>Après ça raconte ce que ça raconte.</p>
 
-            <Link href="/portfolio/projet1">
+            <Link href={firstProject.fichier?.src || ''} target="_blank">
                 <img src="/img/read.svg" className="picto" alt="Lire"/>
             </Link>
 

@@ -1,6 +1,13 @@
+import { ACMS } from '@/utils/tool';
 import Link from 'next/link';
 
-export default function Theme() {
+export default async function ObjetAccueil() {
+    const projectsList = (await ACMS.getList('objet')).sort((a, b) => (a.date || '') > (b.date || '') ? -1 : 1);
+    const firstProject = projectsList[0];
+
+    if(!firstProject) {
+        return <>not found</>
+    }
     return (<main className="theme">
 
         <article className="container">
@@ -15,7 +22,7 @@ export default function Theme() {
 
             <p>4D : toujours en plus du temps, ça va de soi tout en ne sachant pas vraiment comment ça développe.</p>
 
-            <Link href="/portfolio/projet1">
+            <Link href={ACMS.getLink('objet', firstProject)}>
                 <img src="/img/read.svg" className="picto" alt="Lire"/>
             </Link>
 
