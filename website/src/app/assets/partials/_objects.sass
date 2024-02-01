@@ -2,6 +2,26 @@
   &__heading
     &::after
         content: "\a écrit, agence & active le verbe \a Performances artistiques | Livres uniques | Recueils poétiques | Méditations publiques"
-        font-size: 14px
         white-space: pre
         width: 100%
+\:root
+  --width: 0
+  --margin: 0
+.own-carousel
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    column-gap: 10px
+    background-color: #fafafa
+    &__outer
+      position: relative
+      overflow: hidden
+      user-select: none
+    &__item
+      flex-shrink: 0
+      // overflow: hidden
+      flex-basis: 0
+      &:not(:first-child)
+        margin-left: var(--margin)

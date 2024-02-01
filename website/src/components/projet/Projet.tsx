@@ -20,6 +20,25 @@ export default async function Projet(params: {projet: ProjectType, type: 'action
 
             <h1>{projet.name}</h1>
 
+            {/*<div className="own-carousel__container">*/}
+            {/*    <div className="own-carousel__outer">*/}
+            {/*        <div className="own-carousel">*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*    <div className="own-carousel__control">*/}
+            {/*        <button className="control__prev">«</button>*/}
+            {/*        <button className="control__next">»</button>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+
             <div className="slider" style={{height: '375px'}}>
                 {projet.image?.map((image, key) =>
                     <img key={key} src={image.src} alt={image.title}/>
