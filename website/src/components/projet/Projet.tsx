@@ -20,6 +20,8 @@ export default async function Projet(params: {projet: ProjectType, type: 'action
 
             <h1>{projet.name}</h1>
 
+
+            {/* issu de https://spider149.github.io/own-carousel/#installation */}
             {/*<div className="own-carousel__container">*/}
             {/*    <div className="own-carousel__outer">*/}
             {/*        <div className="own-carousel">*/}
