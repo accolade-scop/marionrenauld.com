@@ -22,17 +22,15 @@ export default async function Projet(params: {projet: ProjectType, type: 'action
 
 
             {/* issu de https://spider149.github.io/own-carousel/#installation */}
+
             {/*<div className="own-carousel__container">*/}
             {/*    <div className="own-carousel__outer">*/}
             {/*        <div className="own-carousel">*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
-            {/*            <div className="own-carousel__item">Your content</div>*/}
+            {/*            <div className="own-carousel__item">*/}
+            {/*                {projet.image?.map((image, key) =>*/}
+            {/*                    <img key={key} src={image.src} alt={image.title}/>*/}
+            {/*                )}*/}
+            {/*            </div>*/}
             {/*        </div>*/}
             {/*    </div>*/}
             {/*    <div className="own-carousel__control">*/}
