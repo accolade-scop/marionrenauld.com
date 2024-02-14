@@ -1,5 +1,4 @@
 'use client';
-import PeopleIcon from '@mui/icons-material/People';
 import RocketLaunch from '@mui/icons-material/RocketLaunch';
 import { IconButton } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
