@@ -32,7 +32,7 @@ export default function ProjectSlider(params: { project: ProjectType }) {
 
 
     return (
-        <Splide aria-label="Images" options={options} onVisible={(ref) => console.log('plop', ref.refresh())}>
+        <Splide aria-label="Images" options={options}>
             {project.image.map((image, key) =>
                 <SplideSlide key={key} style={{textAlign: 'center'}}>
                     <img src={image.src} alt={image.title}/>
