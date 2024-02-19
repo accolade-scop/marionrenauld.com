@@ -9,6 +9,10 @@ name: "[ Website ] Deploy"
       - main
     paths:
       - 'website/**'
+  # Allows external webhook trigger
+  repository_dispatch:
+    types:
+      - webhook
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
