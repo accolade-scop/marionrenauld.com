@@ -15,7 +15,7 @@ export default function ProjectSlider(params: { project: ProjectType }) {
     const { selectedIndex, onDotButtonClick } = useImageSelection(emblaApi);
 
     // pas de projet ou pas d'images
-    if (!project || !project.image?.length) {
+    if (!project?.image?.length) {
         return '';
     }
 
