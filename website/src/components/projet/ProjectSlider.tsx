@@ -12,7 +12,7 @@ export default function ProjectSlider(params: { project: ProjectType }) {
     const {project} = params;
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({stopOnInteraction: false})]);
 
-    const { selectedIndex, onDotButtonClick } = useImageSelection(emblaApi);
+    const { selectedIndex, selectImage } = useImageSelection(emblaApi);
 
     // pas de projet ou pas d'images
     if (!project?.image?.length) {
@@ -34,7 +34,7 @@ export default function ProjectSlider(params: { project: ProjectType }) {
             <div className="embla__dots">
                 {project.image.map((_, index) => (
                     <ImageSelection
-                        onClick={() => onDotButtonClick(index)}
+                        onClick={() => selectImage(index)}
                         key={index}
                         className={'embla__dot'.concat(
                             index === selectedIndex ? ' embla__dot--selected' : ''
