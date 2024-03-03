@@ -59,7 +59,7 @@ export const useImageSelection = (
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
 
-    const onDotButtonClick = useCallback(
+    const selectImage = useCallback(
         (index: number) => {
             if (!emblaApi) return
             emblaApi.scrollTo(index)
@@ -88,7 +88,7 @@ export const useImageSelection = (
     return {
         selectedIndex,
         scrollSnaps,
-        onDotButtonClick
+        selectImage
     }
 }
 
