@@ -50,7 +50,7 @@ export default function ProjectSlider(params: { project: ProjectType }) {
 type UseImageSelectionType = {
     selectedIndex: number
     scrollSnaps: number[]
-    onDotButtonClick: (index: number) => void
+    selectImage: (index: number) => void
 }
 
 export const useImageSelection = (
