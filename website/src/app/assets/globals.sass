@@ -8,7 +8,7 @@
 @import "partials/media-queries"
 
 .embla
-    max-width: 95%
+    max-width: 100%
     margin: auto
     --slide-height: 19rem
     --slide-spacing: 20px
@@ -31,6 +31,8 @@
 
     img
         margin: auto
+        height: 375px
+        width: auto
 
 .embla__dots
     display: flex
@@ -68,4 +70,14 @@
 
 .embla__dot--selected:after
     box-shadow: inset 0 0 0 0.2rem black
+
+
+@media (max-width: 640px)
+    .embla
+        width: 90vw
+        .embla__slide
+            img
+                height: auto
+                max-height: 375px
+                width: 90vw
 

@@ -10,7 +10,7 @@ type ProjectType = ACMSConfig<'action'> | ACMSConfig<'objet'>;
 
 export default function ProjectSlider(params: { project: ProjectType }) {
     const {project} = params;
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({stopOnInteraction: false})]);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' }, [Autoplay({stopOnInteraction: false})]);
 
     const { selectedIndex, selectImage } = useImageSelection(emblaApi);
 
