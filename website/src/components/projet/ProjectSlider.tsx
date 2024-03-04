@@ -3,7 +3,6 @@ import { ACMSConfig } from '@/utils/tool';
 import React, { PropsWithChildren, useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay'
-import '../../../src/app/assets/globals.sass';
 import { EmblaCarouselType } from 'embla-carousel'
 
 type ProjectType = ACMSConfig<'action'> | ACMSConfig<'objet'>;

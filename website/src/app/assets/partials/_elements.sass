@@ -13,6 +13,7 @@
     &:hover
      opacity: 1
 
+
 #menu-smart
   display: none
   flex-flow: column nowrap
@@ -33,6 +34,7 @@
       &:hover
         opacity: .5
         transition: opacity 100ms linear
+
 .container
   display: flex
   width: 100%
@@ -45,6 +47,7 @@
 
   p:last-of-type
     padding-bottom: 60px
+
 
 .sommaire
   > .container
@@ -78,6 +81,7 @@
 
       *
         text-align: center
+
 
 .theme
   > .container
@@ -119,26 +123,62 @@
       line-height: 1.3
       margin-bottom: $inter-space-large
 
-    .splide
-      margin-bottom: 60px
-      .splide__pagination
-        bottom: -40px
-        li
-          padding: 0 10px
-          .splide__pagination__page
-            transform: none
-            $size: 10px
-            width: $size
-            height: $size
-            &.is-active
-              background: black
-      nav
-        text-align: center
-        a::before
-          display: inline-block
-          margin: 0 10px
-          color: #aaaaaa
-          content: "\2B24"
+  .embla
+    max-width: 60%
+    margin: auto
+    --slide-height: 70%
+    --slide-spacing: 40px
+    --slide-size: 100%
+    &__viewport
+      position: relative
+      overflow: hidden
+    &__container
+      backface-visibility: hidden
+      display: flex
+      touch-action: pan-y
+      margin-left: calc(var(--slide-spacing) * -1)
+    &__slide
+      flex: 0 0 auto
+      min-width: 0
+      padding-left: var(--slide-spacing)
+      display: flex
+      img
+        margin: auto
+    &__dots
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+      margin-right: calc((2.6rem - 1.4rem) / 2 * -1)
+    &__dot
+      -webkit-tap-highlight-color: black
+      -webkit-appearance: none
+      appearance: none
+      background-color: transparent
+      touch-action: manipulation
+      text-decoration: none
+      cursor: pointer
+      border: 0
+      padding: 0
+      margin: 0
+      width: 2.6rem
+      height: 2.6rem
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      &:after
+        box-shadow: inset 0 0 0 0.2rem transparent
+        width: 1.4rem
+        height: 1.4rem
+        border-radius: 50%
+        display: flex
+        align-items: center
+        content: ''
+        background: lightgray
+
+      &--selected:after
+        box-shadow: inset 0 0 0 0.1rem darkgray
 
 
 .mentions
@@ -163,6 +203,7 @@
     text-align: left
     font-weight: 300
 
+
 .download, .pager
       align-self: center
 
@@ -173,6 +214,7 @@
   align-items: center
   column-gap: 100px
   margin: 20px auto
+
 .picto
   width: 40px
   height: 40px
