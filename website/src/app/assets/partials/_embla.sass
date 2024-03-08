@@ -28,40 +28,21 @@
     align-items: center
     margin-right: calc((2.6rem - 1.4rem) / 2 * -1)
   &__dot
-    -webkit-tap-highlight-color: black
+    -webkit-tap-highlight-color: transparent
     -webkit-appearance: none
     appearance: none
-    background-color: transparent
+    background-color: darkgray
     touch-action: manipulation
     text-decoration: none
     cursor: pointer
     border: 0
     padding: 0
-    margin: 0
-    width: 2.6rem
-    height: 2.6rem
+    width: 1rem
+    height: 1rem
     display: flex
     align-items: center
     justify-content: center
     border-radius: 50%
-    &:after
-      box-shadow: inset 0 0 0 0.2rem transparent
-      width: 1.4rem
-      height: 1.4rem
-      border-radius: 50%
-      display: flex
-      align-items: center
-      content: ''
-      background: lightgray
-
-    &--selected:after
-      box-shadow: inset 0 0 0 0.1rem darkgray
-
-@media (max-width: 640px)
-  .embla
-    width: 90vw
-    .embla__slide
-      img
-        height: auto
-        max-height: 375px
-        width: calc(90vw - 40px)
+    margin: 1rem .3rem
+    &--selected
+      background-color: #7a7a7a
