@@ -4,5 +4,4 @@ module.exports = {
   generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
   outDir: 'dist'
-  // ...other options
 }
