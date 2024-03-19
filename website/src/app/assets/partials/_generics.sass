@@ -50,12 +50,18 @@ footer
     > *
       max-width: $interface-container-width-max
       white-space: nowrap
-      flex: 0 0 0
     &:first-child
-      flex: 1 1 auto
-      text-align: center
-      column-gap: 80px
       background-color: #f7f7f7
+      > *
+        &:first-child
+          flex: 1 1 45%
+          text-align: right
+        &:last-child
+          text-align: left
+          flex: 1 1 45%
+        &:nth-child(2)
+          text-align: center
+          flex: 1 1 10%
       .picto
         width: 20px
         height: 20px

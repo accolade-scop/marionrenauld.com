@@ -1,5 +1,6 @@
 import Footer from '@/components/global/footer';
 import Header from '@/components/global/header';
+import Script from 'next/script';
 import { ReactNode } from 'react';
 import './assets/globals.sass';
 
@@ -20,6 +21,7 @@ export default function RootLayout({
                 content="marion.renauld écrit, agence & active le verbe sous forme de performances artistiques, de livres uniques, de recueils poétiques et de méditations publiques."/>
           {/* eslint-disable-next-line @next/next/no-page-custom-font */}
           <link rel="icon" href="/favicon.ico" sizes="any"/>
+          <Script src="/js/script.js"/>
       </head>
 
       <body>

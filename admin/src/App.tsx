@@ -39,7 +39,6 @@ import {
     SelectField,
     SelectInput,
     Show,
-    ShowButton,
     SimpleForm,
     SimpleFormIterator,
     SimpleShowLayout,
@@ -58,8 +57,9 @@ import { Field } from './config/types';
 export function MyAppBar() {
     const [loading, setLoading] = useState(false);
 
-    const pat = '';
-    const url = '';
+    // eslint-disable-next-line no-undef
+    const pat = process.env.PAT;
+    const url = 'https://api.github.com/repos/accolade-scop/marionrenauld.com/dispatches';
 
     function triggerDeploy() {
         setLoading(true);
@@ -172,7 +172,7 @@ const getList = (c: col) => {
         // @ts-ignore
         ? collection[key] : defaultLabel;
     const editLabel: any = getLabel('editLabel', 'Modifier');
-    const showLabel: any = getLabel('showLabel', 'Voir');
+    // const showLabel: any = getLabel('showLabel', 'Voir');
     const sort: any = 'defaultSort' in collection ? collection.defaultSort : undefined;
     return (
         <List
@@ -439,6 +439,7 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
 };
 
 const ConditionalEmailField = (
+    // eslint-disable-next-line no-unused-vars
     condition: (record: any) => boolean,
     component: JSX.Element
 ) => {

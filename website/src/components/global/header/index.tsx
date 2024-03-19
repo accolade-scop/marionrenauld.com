@@ -19,7 +19,7 @@ export default function Header() {
                 <li><Link href="/projet/langage/">Langage</Link></li>
                 <li><Link href="/projet/objet/">Objet</Link></li>
                 <li>
-                    <button type={"button"} id={"burger"}>
+                    <button type={"button"} id="burger">
                         <img src="/img/expand.svg" className="picto" alt="Ouvrir le menu"/>
                     </button>
                 </li>
@@ -30,11 +30,11 @@ export default function Header() {
     </header>
 
     <nav>
-        <ul className="menu-smart" id={"menu-smart"}>
+        <ul className="menu-smart" id="menu-smart">
             <li><Link href="/">Sommaire</Link></li>
-            <li><Link href="/categorie/action/">Action</Link></li>
-            <li><Link href="/categorie/langage/">Langage</Link></li>
-            <li><Link href="/categorie/objet/">Objet</Link></li>
+            <li><Link href="/projet/action/">Action</Link></li>
+            <li><Link href="/projet/langage/">Langage</Link></li>
+            <li><Link href="/projet/objet/">Objet</Link></li>
         </ul>
     </nav>
 
