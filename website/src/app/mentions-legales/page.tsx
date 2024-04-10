@@ -18,10 +18,10 @@ export default function MentionsLegales() {
 
                 <h2>Conception du site</h2>
                 <p>
-                    Léa Candat<br/>
-                    lcandat54@yahoo.com<br/>
-                    SIRET : 822 227 148 00017<br/>
-                    Site internet : lea-candat.fr<br/>
+                    ACCOLADE<br/>
+                    contact@accolade.coop<br/>
+                    SIRET : 922 155 833 00010<br/>
+                    Site internet : accolade.coop<br/>
                 </p>
 
                 <h2>Responsable de publication</h2>
@@ -37,12 +37,9 @@ export default function MentionsLegales() {
 
                 <h2>Hébergement du site</h2>
                 <p>
-                    OVH<br/>
-                    SAS au capital de 10 069 020 €<br/>
-                    RCS Lille Métropole 424 761 419 00045<br/>
-                    Code APE 2620Z<br/>
-                    N° TVA : FR 22 424 761 419<br/>
-                    Siège social : 2 rue Kellermann – 59100 Roubaix – France.<br/>
+                    FIREBASE<br/>
+                    188 King ST, San Francisco, CA 94107, United States<br/>
+                    <Link href="https://firebase.google.com/" target="_blank" style={{display: 'inline-block'}}>https://firebase.google.com</Link><br/>
                 </p>
 
                 <h2>Droits d auteur - Copyright</h2>

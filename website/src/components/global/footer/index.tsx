@@ -11,8 +11,8 @@ export default function Footer() {
             </section>
 
             <section>
-                <span>marion.renauld © 2017</span>
-                <span>Conception <Link target="_blank" href="http://lea-candat.fr/">Léa Candat</Link></span>
+                <span>marion.renauld © 2024</span>
+                <span>Conception <Link target="_blank" href="http://lea-candat.fr/">Léa Candat</Link> et <Link target="_blank" href="https://accolade.coop/">Accolade</Link></span>
                 <span><Link href="/mentions-legales/">Mentions légales</Link></span>
             </section>
         </footer>);
