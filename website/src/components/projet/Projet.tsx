@@ -1,9 +1,10 @@
+import ProjectSlider from '@/components/projet/ProjectSlider';
 import { ACMS, ACMSConfig } from '@/utils/tool';
 import Link from 'next/link';
 
 type ProjectType = ACMSConfig<'action'> | ACMSConfig<'objet'>;
 
-export default async function Projet(params: {projet: ProjectType, type: 'action' | 'objet'}) {
+export default async function Projet(params: { projet: ProjectType, type: 'action' | 'objet' }) {
 
     const projet: ProjectType = params.projet;
     const type = params.type;
@@ -20,30 +21,7 @@ export default async function Projet(params: {projet: ProjectType, type: 'action
 
             <h1>{projet.name}</h1>
 
-
-            {/* issu de https://spider149.github.io/own-carousel/#installation */}
-
-            {/*<div className="own-carousel__container">*/}
-            {/*    <div className="own-carousel__outer">*/}
-            {/*        <div className="own-carousel">*/}
-            {/*            <div className="own-carousel__item">*/}
-            {/*                {projet.image?.map((image, key) =>*/}
-            {/*                    <img key={key} src={image.src} alt={image.title}/>*/}
-            {/*                )}*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*    <div className="own-carousel__control">*/}
-            {/*        <button className="control__prev">«</button>*/}
-            {/*        <button className="control__next">»</button>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-
-            <div className="slider" style={{height: '375px'}}>
-                {projet.image?.map((image, key) =>
-                    <img key={key} src={image.src} alt={image.title}/>
-                )}
-            </div>
+            <ProjectSlider project={projet} />
 
             <h2>{projet.period}</h2>
 

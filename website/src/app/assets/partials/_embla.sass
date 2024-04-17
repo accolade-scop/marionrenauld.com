@@ -1,0 +1,48 @@
+.embla
+  max-width: 100%
+  margin: auto
+  --slide-height: 70%
+  --slide-spacing: 20px
+  --slide-size: 100%
+  &__viewport
+    position: relative
+    overflow: hidden
+  &__container
+    backface-visibility: hidden
+    display: flex
+    touch-action: pan-y
+    margin-left: calc(var(--slide-spacing) * -1)
+  &__slide
+    flex: 0 0 auto
+    min-width: 0
+    padding-left: var(--slide-spacing)
+    display: flex
+    img
+      margin: auto
+      height: 375px
+      width: auto
+  &__dots
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    margin-right: calc((2.6rem - 1.4rem) / 2 * -1)
+  &__dot
+    -webkit-tap-highlight-color: transparent
+    -webkit-appearance: none
+    appearance: none
+    background-color: darkgray
+    touch-action: manipulation
+    text-decoration: none
+    cursor: pointer
+    border: 0
+    padding: 0
+    width: 1rem
+    height: 1rem
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    margin: 1rem .3rem
+    &--selected
+      background-color: #7a7a7a

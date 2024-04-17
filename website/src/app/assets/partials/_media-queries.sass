@@ -22,12 +22,27 @@
           width: 100%
           *
             text-align: center !important
+    &.projet
+      > article.container
+        display: block
+        h1, h2, h5, p, a
+          display: block
+          width: 100%
+          text-align: center
 
-// md: 576px
-+respond-inf(xs)
++respond-inf(xs) // md: 576px
+  .embla
+    width: 90vw
+    .embla__slide
+      img
+        height: 375px
+  .-o-logo__heading
+    img
+      height: auto
   .theme
     h1
       font-size: 50px
+
 
   footer
     section
