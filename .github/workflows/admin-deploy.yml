@@ -8,7 +8,7 @@ name: "[ ADMIN ] Deploy"
     branches:
       - main
     paths:
-      - 'website/**'
+      - 'admin/**'
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest

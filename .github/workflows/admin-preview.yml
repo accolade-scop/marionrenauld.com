@@ -5,7 +5,7 @@ name: "[ ADMIN ] Preview"
 on:
   pull_request:
     paths:
-      - 'website/**'
+      - 'admin/**'
 
 jobs:
   build_and_preview:
