@@ -9,34 +9,34 @@ const projectFields = {
     },
     date: {
         label: 'Date',
-            type: 'date'
+        type: 'date'
     },
     period: {
         label: 'Période',
     },
     location: {
         label: 'Lieu',
-            hide: ['list']
+        hide: ['list']
     },
     descriptif: {
         label: 'Descriptif',
-            hide: ['list']
+        hide: ['list']
     },
     contenu: {
         label: 'Contenu',
-            type: 'text',
-            hide: ['list']
+        type: 'text',
+        hide: ['list']
     },
     fichier: {
         label: 'Fichier',
-            type: 'file',
-            hide: ['list']
+        type: 'file',
+        hide: ['list']
     },
     image: {
         label: 'image',
-            type: 'image',
-            multiple: true,
-            hide: ['list']
+        type: 'image',
+        multiple: true,
+        hide: ['list']
     }
 } as const;
 

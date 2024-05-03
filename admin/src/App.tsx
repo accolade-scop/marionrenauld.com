@@ -2,7 +2,9 @@
 import RocketLaunch from '@mui/icons-material/RocketLaunch';
 import { IconButton } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
+import polyglotI18nProvider from 'ra-i18n-polyglot';
 import { RichTextInput } from 'ra-input-rich-text';
+import frenchMessages from 'ra-language-french';
 import { useState } from 'react';
 import {
     Admin,
@@ -53,6 +55,11 @@ import { JSX } from 'react/jsx-runtime';
 import { config } from './config/config';
 import { authProvider, dataProvider } from './config/firebase';
 import { Field } from './config/types';
+
+const messages = {'fr': frenchMessages};
+
+// @ts-ignore
+const i18nProvider = polyglotI18nProvider(locale => messages[locale], 'fr', ['fr']);
 
 export function MyAppBar() {
     const [loading, setLoading] = useState(false);
@@ -120,6 +127,7 @@ export const App = () => {
             layout={MyLayout}
             menu={MyMenu}
             authProvider={authProvider}
+            i18nProvider={i18nProvider}
             queryClient={queryClient}
             dataProvider={dataProvider}>
             <>
@@ -327,7 +335,7 @@ const guessShowField = (key: string, field: Field) => {
     // standard
     switch (field.type) {
         case 'image':
-            return <ImageField key={key} {...params} title="title" source={key + '.src'} />;
+            return <ImageField key={key} {...params} title="title" source={key + '.src'}/>;
         case 'checkbox':
             return <BooleanField key={key} {...params}/>;
         case 'string':
@@ -412,11 +420,11 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
     // standard
     switch (field.type) {
         case 'image':
-            return <ImageInput key={key} {...params} maxSize={5000000} multiple={field.multiple || false}>
+            return <ImageInput key={key} {...params} maxSize={5_000_000} multiple={field.multiple || false}>
                 <ImageField source="src" title="title"/>
             </ImageInput>;
         case 'file':
-            return <FileInput key={key} {...params} maxSize={5000000}>
+            return <FileInput key={key} {...params} maxSize={20_000_000}>
                 <FileField source="src" title="title"/>
             </FileInput>;
 
@@ -427,7 +435,11 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
         case 'text':
             return <RichTextInput key={key} {...params} height="500" minHeight={500}/>;
         case 'date':
-            return <DateInput key={key}  {...params}/>;
+            return <DateInput key={key}
+                              parse={(date: Date | string) => {
+                                  return date ? new Date(date) : null;
+                              }}
+                              {...params}/>;
         case 'number':
             return <NumberInput key={key}  {...params}/>;
         case 'select':

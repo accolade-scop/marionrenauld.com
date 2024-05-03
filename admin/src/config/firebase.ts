@@ -14,7 +14,7 @@ const config: RAFirebaseOptions = {
     // logging: true,
     watch: [],
     lazyLoading: {
-        enabled: false
+        enabled: true
     },
     // firestoreCostsLogger: {
     //     enabled: true,
