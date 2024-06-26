@@ -32,12 +32,6 @@ const projectFields: ICollection['fields'] = {
         type: 'file',
         hide: ['list']
     },
-    image: {
-        label: 'image',
-        type: 'image',
-        multiple: true,
-        hide: ['list']
-    },
     images: {
         label: 'images',
         type: 'images',
