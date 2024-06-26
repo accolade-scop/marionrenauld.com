@@ -1,0 +1,13 @@
+.RaSimpleFormIterator-inline .MuiStack-root {
+    flex-direction: row;
+}
+.RaSimpleFormIterator-inline .MuiStack-root .RaLabeled-label {
+    display: none
+}
+
+.RaSimpleFormIterator-inline .MuiStack-root [role=button] {
+    width: 200px
+}
+.RaSimpleFormIterator-inline .MuiStack-root .previews {
+    /*position: relative;*/
+}

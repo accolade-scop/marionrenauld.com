@@ -14,24 +14,27 @@ export default function ProjectSlider(params: { project: ProjectType }) {
     const { selectedIndex, selectImage } = useImageSelection(emblaApi);
 
     // pas de projet ou pas d'images
-    if (!project?.image?.length) {
+    if (!project?.images?.length) {
         return '';
     }
+
+    // @ts-ignore
+    const imagesList: any[] = project.images;
 
     return (
         <div className="embla">
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container">
-                    {project.image.map((image, key) =>
+                    {imagesList.map((image, key) =>
                         <div key={key} className="embla__slide">
-                            <img src={image.src} alt={image.title}/>
+                            <img src={image.element.fields.src.stringValue} alt={image.element.fields.title.stringValue}/>
                         </div>
                     )}
                 </div>
             </div>
 
             <div className="embla__dots">
-                {project.image.map((_, index) => (
+                {imagesList.map((_, index) => (
                     <ImageSelection
                         onClick={() => selectImage(index)}
                         key={index}

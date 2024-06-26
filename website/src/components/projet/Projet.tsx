@@ -6,14 +6,17 @@ type ProjectType = ACMSConfig<'action'> | ACMSConfig<'objet'>;
 
 export default async function Projet(params: { projet: ProjectType, type: 'action' | 'objet' }) {
 
-    const projet: ProjectType = params.projet;
+    const projet = params.projet;
     const type = params.type;
+
 
     // on récupère la liste des projets ordonnés par date décroissante
     const projectsList = (await ACMS.getList(type)).sort((a, b) => (a.date || '') > (b.date || '') ? -1 : 1);
     const currentPosition = projectsList.findIndex(p => p.id === projet.id);
     const previousProject = currentPosition > 0 ? projectsList[currentPosition - 1] : null;
     const nextProject = currentPosition < projectsList.length ? projectsList[currentPosition + 1] : null;
+
+    const fichier: any = projet.fichier;
 
     return <main className="projet">
 
@@ -29,8 +32,8 @@ export default async function Projet(params: { projet: ProjectType, type: 'actio
 
             <div dangerouslySetInnerHTML={{__html: projet.contenu || ''}}/>
 
-            {projet.fichier?.src
-                ? <Link className="download" href={projet.fichier.src} target="_blank">
+            {fichier?.src
+                ? <Link className="download" href={fichier.src} target="_blank">
                     <img src="/img/download.svg" className="picto" alt="Télécharger"/>
                 </Link>
                 : ''}

@@ -1,9 +1,9 @@
-import { IConfig } from './types';
+import { ICollection, IConfig } from './types';
 
 export const projetTypesList = ['action', 'objet'];
 export type ProjetType = typeof projetTypesList[number];
 
-const projectFields = {
+const projectFields: ICollection['fields'] = {
     name: {
         label: 'Titre'
     },
@@ -37,7 +37,12 @@ const projectFields = {
         type: 'image',
         multiple: true,
         hide: ['list']
-    }
+    },
+    images: {
+        label: 'images',
+        type: 'images',
+        hide: ['list']
+    },
 } as const;
 
 export const config = {

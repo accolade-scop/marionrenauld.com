@@ -1,6 +1,7 @@
-import { config } from '@/../../admin/src/config/config';
+
 import { ACMSConfig, Collection } from '@/../../admin/src/config/types';
 import { getData } from '@/utils/get-information';
+import { config } from '../../../admin/src/config/config';
 export type { ACMSConfig, Collection } from '@/../../admin/src/config/types';
 
 export const slugify = (text: string = '') => {

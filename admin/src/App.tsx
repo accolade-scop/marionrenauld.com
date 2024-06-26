@@ -55,11 +55,13 @@ import { JSX } from 'react/jsx-runtime';
 import { config } from './config/config';
 import { authProvider, dataProvider } from './config/firebase';
 import { Field } from './config/types';
+import './styles.css';
 
 const messages = {'fr': frenchMessages};
 
 // @ts-ignore
 const i18nProvider = polyglotI18nProvider(locale => messages[locale], 'fr', ['fr']);
+
 
 export function MyAppBar() {
     const [loading, setLoading] = useState(false);
@@ -378,7 +380,7 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
     if (field.nested && Object.keys(field.nested).length > 0) {
         const components = Object.keys(field.nested).map(k => guessCreateField(k, field.nested[k], false));
         return (
-            <ArrayInput key={key} {...params}>
+            <ArrayInput key={key} source={key+'lol'}>
                 <SimpleFormIterator inline>
                     {components}
                 </SimpleFormIterator>
@@ -437,7 +439,11 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
         case 'date':
             return <DateInput key={key}
                               parse={(date: Date | string) => {
-                                  return date ? new Date(date) : null;
+                                  const newDate = new Date(date);
+                                  if (isNaN(newDate.getTime()) || newDate.getFullYear()<1900) {
+                                      return date;
+                                  }
+                                  return newDate;
                               }}
                               {...params}/>;
         case 'number':
@@ -446,6 +452,8 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
             return <SelectInput key={key} {...params}
                                 optionText={field.transformer}
                                 choices={field.list.map(i => ({id: i, name: i}))}/>;
+        case 'images':
+            return <OrderedImagesField key={key} {...params} />;
     }
     return <TextInput key={key}  {...params} />;
 };
@@ -458,3 +466,16 @@ const ConditionalEmailField = (
     const record = useRecordContext();
     return condition(record) ? component : null;
 };
+
+
+const OrderedImagesField = (parameters: any) => {
+
+    return  <ArrayInput source={parameters.source}>
+            <SimpleFormIterator inline disableClear={true}>
+                <ImageInput source="element" label="" maxSize={5_000_000} >
+                    <ImageField source="src" title="title" label=""/>
+                </ImageInput>
+            </SimpleFormIterator>
+        </ArrayInput>
+
+}
