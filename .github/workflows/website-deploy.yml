@@ -37,4 +37,4 @@ jobs:
           webhookUrl: '${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}'
           jobStatus: '${{ job.status }}'
           title: 'Nouvelle version'
-          createDefaultSection: false
+          subtitle: 'https://marionrenauld.com/'

@@ -4,9 +4,7 @@ import Script from 'next/script';
 import { ReactNode } from 'react';
 import './assets/globals.sass';
 
-export default function RootLayout({
-  children,
-}: {
+export default function RootLayout({children,}: {
   children: ReactNode
 }) {
   return (
