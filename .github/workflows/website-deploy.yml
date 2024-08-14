@@ -30,3 +30,11 @@ jobs:
           channelId: live
           projectId: marion-renauld
           target: website
+      - name: Notify Google Chat
+        if: ${{ always() }} # Use always to ensure that the notification is also send on failure of former steps
+        uses: SimonScholz/google-chat-action@main
+        with:
+          webhookUrl: '${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}'
+          jobStatus: '${{ job.status }}'
+          title: 'Nouvelle version'
+          createDefaultSection: false
