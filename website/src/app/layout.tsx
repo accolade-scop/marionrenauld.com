@@ -20,7 +20,7 @@ export default function RootLayout({
           <meta property="description"
                 content="marion.renauld écrit, agence & active le verbe sous forme de performances artistiques, de livres uniques, de recueils poétiques et de méditations publiques."/>
           {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-          <link rel="icon" href="/favicon.ico" sizes="any"/>
+          <link rel="icon" href="/img/favicon.png" sizes="any"/>
           <Script src="/js/script.js"/>
       </head>
 
