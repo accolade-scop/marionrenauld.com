@@ -45,21 +45,30 @@ footer
     justify-content: center
     align-items: center
     padding: 20px 0
+    column-gap: 5%
+    row-gap: 2%
     > *
       max-width: $interface-container-width-max
       white-space: nowrap
     &:first-child
       background-color: #f7f7f7
-      > *
-        &:first-child
-          flex: 1 1 45%
-          text-align: right
-        &:last-child
-          text-align: left
-          flex: 1 1 45%
-        &:nth-child(2)
-          text-align: center
-          flex: 1 1 10%
+      a
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        align-items: center
+
+      // en attente
+        > *
+          &:first-child
+            flex: 1 1 45%
+            text-align: right
+          &:last-child
+            text-align: left
+            flex: 1 1 45%
+          &:nth-child(2)
+            text-align: center
+            flex: 1 1 10%
       .picto
         width: 20px
         height: 20px

@@ -47,7 +47,9 @@
   footer
     section
       flex-flow: column nowrap
-      row-gap: 0
+      &:first-child
+        a
+          display: block
       &:last-child
         > span
           &:not(:last-child)::after
