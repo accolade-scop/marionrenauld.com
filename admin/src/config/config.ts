@@ -68,6 +68,26 @@ export const config = {
             label: 'Objet',
             order: 2,
             fields: projectFields
+        },
+        cv: {
+            defaultSort: {
+                field: 'lastupdate',
+                order: 'DESC'
+            },
+            label: 'CV',
+            order: 1,
+            fields: {
+                lastupdate: {
+                    label: 'lastupdate',
+                    hide: ['create', 'edit'],
+                    custom: (value: {lastupdate: Date}) => new Date(value.lastupdate).toLocaleString()
+                },
+                fichier: {
+                    label: 'Fichier',
+                    type: 'file',
+                    hide: ['list']
+                }
+            }
         }
     }
 } as const satisfies IConfig;

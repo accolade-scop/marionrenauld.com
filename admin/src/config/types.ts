@@ -10,7 +10,7 @@ type XOR<T extends any[]> =
 
 export type SimpleField = {
     label: string;
-    type?: 'string' | 'number' | 'text' | 'date' | 'checkbox' | 'file';
+    type?: 'string' | 'number' | 'text' | 'date' | 'checkbox' | 'file' | 'custom';
     // eslint-disable-next-line no-unused-vars
     condition?: (record: any) => boolean
 };
@@ -28,6 +28,8 @@ export type Field = XOR<[SimpleField, ReferenceField, SelectField, GroupField, J
     // eslint-disable-next-line no-unused-vars
     transformer?: (v: any) => any,
     inputProps?: any,
+    // eslint-disable-next-line no-unused-vars
+    custom?: (value: any) => string;
 }
 
 
