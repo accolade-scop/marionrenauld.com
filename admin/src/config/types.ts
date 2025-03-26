@@ -81,5 +81,5 @@ export type getFieldType<
 export type Collection = keyof typeof config['collections'];
 export type ACMSConfig<Coll extends Collection> = {
     -readonly [Field in AFieldList<Coll>]?: getFieldType<Coll, Field>;
-} & { id: string }
+} & { id: string, createdBy: string, createDate: Date, lastupdate: Date }
 
