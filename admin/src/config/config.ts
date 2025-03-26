@@ -77,8 +77,8 @@ export const config = {
             label: 'CV',
             order: 1,
             fields: {
-                lastupdate: {
-                    label: 'lastupdate',
+                name: {
+                    label: 'Titre',
                     hide: ['create', 'edit'],
                     custom: (value: {lastupdate: Date}) => new Date(value.lastupdate).toLocaleString()
                 },
