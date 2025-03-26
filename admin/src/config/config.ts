@@ -71,7 +71,7 @@ export const config = {
         },
         cv: {
             defaultSort: {
-                field: 'lastupdate',
+                field: 'name',
                 order: 'DESC'
             },
             label: 'CV',

@@ -313,7 +313,7 @@ const guessViewField = (key: string, field: Field) => {
     const customField = field.custom;
 
     if (customField) {
-        return <FunctionField render={(value: Record<string, unknown>) => customField(value)}/>
+        return <FunctionField key={key} {...params} render={(value: Record<string, unknown>) => customField(value)}/>
     }
 
     switch (field.type) {
