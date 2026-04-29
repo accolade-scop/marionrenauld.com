@@ -16,7 +16,7 @@ export default async function Projet(params: { projet: ProjectType, type: 'actio
     const previousProject = currentPosition > 0 ? projectsList[currentPosition - 1] : null;
     const nextProject = currentPosition < projectsList.length ? projectsList[currentPosition + 1] : null;
 
-    const fichier: any = projet.fichier;
+    const fichiersList: any[] = projet.fichier ? (Array.isArray(projet.fichier) ? projet.fichier : [projet.fichier]) : [];
 
     return <main className="projet">
 
@@ -32,12 +32,13 @@ export default async function Projet(params: { projet: ProjectType, type: 'actio
 
             <div dangerouslySetInnerHTML={{__html: projet.contenu || ''}}/>
 
-            {fichier?.src
-                ? <Link className="download" href={fichier.src} target="_blank">
+            <div style={{display: 'flex', justifyContent: 'center', gap: '1rem', alignSelf: 'center'}}>
+            {fichiersList.map((f, key) => f?.src
+                ? <Link key={key} className="download" href={f.src} target="_blank">
                     <img src="/img/download.svg" className="picto" alt="Télécharger"/>
                 </Link>
-                : ''}
-
+                : '')}
+            </div>
             <nav className="pager">
                 {previousProject
                     ? <Link href={ACMS.getLink(type, previousProject)}>

@@ -309,7 +309,7 @@ const guessViewField = (key: string, field: Field) => {
             );
         }
     }
-    
+
     const customField = field.custom;
 
     if (customField) {
@@ -473,7 +473,7 @@ const guessCreateField = (key: string, field: Field, fullWidth = true) => {
             );
         case 'file':
             return (
-                <FileInput key={key} {...params} maxSize={20_000_000}>
+                <FileInput key={key} {...params} maxSize={20_000_000} multiple={true}>
                     <FileField source='src' title='title' />
                 </FileInput>
             );
