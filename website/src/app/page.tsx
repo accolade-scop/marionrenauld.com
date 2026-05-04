@@ -18,7 +18,7 @@ export default async function Home() {
                 </nav>
                 <nav>
                     <h1><Link href="/projet/langage/">Langage</Link></h1>
-                    {langagesList.map((a, index)=> <Link href={a.fichier?.src || ''} key={index} target="_blank">{a.name}</Link>)}
+                    {langagesList.map((a, index)=> <Link href={Array.isArray(a.fichier) ? a.fichier[0]?.src : a.fichier?.src || ''} key={index} target="_blank">{a.name}</Link>)}
                 </nav>
                 <nav>
                     <h1><Link href="/projet/objet/">Objet</Link></h1>
