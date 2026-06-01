@@ -33,7 +33,7 @@ export default async function LangageAccueil() {
 
             <p>Après ça raconte ce que ça raconte.</p>
 
-            <Link href={firstProject.fichier?.src || ''} target="_blank">
+            <Link href={Array.isArray(firstProject.fichier) ? firstProject.fichier[0]?.src : firstProject.fichier?.src || ''} target="_blank">
                 <img src="/img/read.svg" className="picto" alt="Lire"/>
             </Link>
 
