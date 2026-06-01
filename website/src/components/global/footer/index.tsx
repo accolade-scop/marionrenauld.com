@@ -11,7 +11,7 @@ export default async function Footer() {
             <section>
                 <Link target="_blank"
                       href="http://poincare.univ-lorraine.fr/fr/membre-associe/marion-renauld">philosophie</Link>
-                <Link target="_blank" href={selected.fichier?.src || ''}>
+                <Link target="_blank" href={Array.isArray(selected.fichier) ? selected.fichier[0]?.src : selected.fichier?.src || ''}>
                     <img src="/img/cv.svg" className="picto" alt="Lien vers curriculum vitae"/></Link>
                 <Link target="_blank" href="https://www.instagram.com/marionrenauld/">
                     <img src="/img/photo.svg" className="picto" alt="Lien Instagram"/></Link>
